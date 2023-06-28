@@ -1,0 +1,418 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.logo{
+    display: flex;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #480000, #620505, #300000);
+    display: flex;
+    height: 100%;
+    width: 100%;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    color: #191654;
+    animation: pageFade 2.5s ease-out;
+}
+
+#siteLogo{
+    height: 80px;
+    width: 80px;
+    stroke: white;
+    fill-opacity: 0;
+    stroke-width: 4px;
+    margin: 0px -10px 0px -10px;
+    stroke-dasharray: 4500;
+    animation: draw 9s ease;
+}
+
+.logoText, .logoText h1 {
+    font-family: 'Gruppo', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 25px;
+    animation: logoanimaion 1.15s ease-in;
+}
+
+.presentationPage {
+    font-family: 'Gruppo', sans-serif;
+    display: flex;
+    top: 0;
+    left: 0;
+    position: absolute;
+    flex-direction: column;
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #222222, #444444, #222222);
+}
+
+.members {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 30px;
+    padding-bottom: 70px;
+}
+
+
+.title {
+    text-align: center;
+    color: white;
+}
+
+.title h1 {
+    font-size: 50px;
+}
+
+.title small{
+    margin-top: 8px;
+    font-size: 25px;
+}
+
+.images{
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.img01 , .img02, .img03, .img04 {
+    width: 240px;
+    margin: 0px 30px 0px 0px;
+    border-radius: 20px;
+    z-index: -3;
+
+}
+
+.student01, .student02, .student03, .student04 {
+    text-align: center;
+    background: white;
+    width: 200px;
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 1000;
+    margin: -30px 0px 0px 20px;
+    position: absolute;
+}
+
+.name {
+    font-size: 25px;
+    text-decoration: solid;
+}
+.role{
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+#loading {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+iframe{
+    border: none;
+    z-index: 1;
+    animation: pageFade 3s 4s ease-out;
+}
+
+#productsBody {
+    background: linear-gradient(to right, black, #300000, black);
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#topMovies {
+    background: black;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    width: 90%;
+    margin: auto;
+}
+
+.infoandButtons {
+    font-family: 'Gruppo', sans-serif;
+    padding-top: 24%;
+    padding-bottom: 3%; 
+    margin-top: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#movieName {
+    font-size: 35px;
+    transition: 1000ms;
+    animation: textAnimation 2s ease-in;
+}
+
+#movieDesc {
+    font-size: 15px;
+    margin: 10px 20px 20px 0px;
+    transition: 1000ms;
+    animation: textAnimation 1s ease-in;
+}
+
+.addCart, .buyNow {
+    padding: 10px;
+    margin: 10px 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.addCart {
+    background: #620505;
+    color: white;
+}
+
+.addCart:hover, .buyNow:hover {
+    opacity: 80%;
+}
+
+.ProductSection {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    
+}
+
+.highlyRecomended {
+    font-family: 'Gruppo', sans-serif;
+    color: white;
+    margin-top: 40px;
+    font-size: 25px;
+}
+
+#HolyWoodMovies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#popupView{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+#view{
+    display: flex;
+    width: 80%;
+    background: #303030;
+    border-radius: 20px;
+    opacity: 90%;
+}
+
+#view img{
+    width: 400px;
+    flex: 2;
+    border-radius: 20px;
+}
+
+#QuickviewInfo{
+    text-align: start;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-family: 'Gruppo', sans-serif;
+}
+
+#Quickview{
+    flex: 1;
+}
+
+.closeButton {
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.closeBtnDiv {
+    text-align: end;
+    margin: 20px 20px 0px 0px;
+}
+
+.closeButton:hover {
+    background: red;
+    color: white;
+}
+
+#quickViewname{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+#quickViewdesc{
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.priceTag {
+    background: #480000;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+#quickViewPrice {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+button{
+    font-family: 'Gruppo', sans-serif;
+}
+
+.addCartQuickView {
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #620505;
+    color: white;
+    font-size: 15px;
+}
+
+.addCartQuickView:hover {
+    opacity: 80%;
+}
+
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 4500;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes logoanimaion {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+
+    }
+    100% {
+        opacity: 100;
+        transform: translateY(0px);
+    }
+  }
+
+  @keyframes textAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 100;
+    }
+  }
+
+  @keyframes pageFade {
+    0% {
+        opacity: 100;
+
+    }
+    70% {
+        opacity: 100;
+    }
+    100% {
+        opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+
+    .title h1 {
+        font-size: 45px;
+    }
+
+    .title small {
+        font-size: 20px;
+    }
+    .images{
+        flex-direction: column;
+        margin-top: -40px;
+    }
+
+    .presentationPage {
+        position: relative;
+    }
+
+    .img01 , .img02, .img03, .img04 {
+        margin-top: 80px;
+    
+    }
+
+    #siteLogo {
+        width: 70px;
+        height: 70px; 
+    }
+
+    .logoText, .logoText h1 {
+        font-size: 20px;
+    }
+
+
+  }
+
+  @media screen and (min-width: 1920px) {
+
+    #HolyWoodMovies {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #topMovies {
+        background-position: center top;
+    }
+
+
+  }

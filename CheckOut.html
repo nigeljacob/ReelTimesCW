@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hehe.css">
+    <title>Checkout - Reel Times</title>
+</head>
+<body id="CheckoutBody">
+    <div class="topnav">
+        <header>
+            <nav>
+                <a href="#" class="logo">
+                    <i class="bx bxs-movie" ></i>&nbsp; <span>Reel Times</span>
+                </a>
+                <div id="myLinks">
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="./w3school.html">Home</a></li>
+                        <li class="nav-item"><a href="./web.html">Comments</a></li>
+                        <li class="nav-item"><a href="./Products.html" class="active">Shop</a></li>
+                        <li class="nav-item"><a href="#">Quiz</a></li>
+                        <li class="nav-item"><a href="#">Site map</a></li>
+                        <li class="nav-item"><a href="#">About us</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <main>
+        <div class="Wrapper" id="Wrapper">
+            <div class="CartSummary">
+                <h1>Cart Summary</h1>
+                <div id="CartSummaryItems">
+    
+                </div>
+                <hr>
+                <h3 id="cartTotal">Total: <span id="SummaryTotal">$0.00</span></h3>
+            </div>
+    
+            <div class="CheckOutWrapper">
+    
+                <div class="Checkout">
+                    <div class="CheckOutHeader">
+                        <div class="yourDetailsHeader">
+                            <h3 id="YourDetails">Your Details</h3>
+                        </div>
+                    
+                        <div class="PaymentHeader">
+                            <h3 id="PaymentText">Payment</h3>
+                        </div>
+                    </div>
+    
+                    <div class="formWrapper">
+                        <form class="YourDetailsForm" name="MainForm" onsubmit="Submit()" id="mainForm" method="POST"> 
+                            <div id="yourDetails">
+                                <div class="name">
+                                    <div class="firstname">
+                                        <Label for="FName" class="required">First Name:</Label>
+                                        <br>
+                                        <input type="text" name="fname" id="FName" required>
+                                    </div>
+                                    <div class="lastname">
+                                        <Label for="LName" class="required">Last Name:</Label>
+                                        <br>
+                                        <input type="text" name="lname" id="LName" required>
+                                    </div>
+                                <br>
+                                </div>
+    
+                                <div class="AddressLabel">
+                                    <div class="AddressClass">
+                                        <Label for="Address" id="AddressLabel" class="required">Address</Label>
+                                        <br>
+                                        <input type="text" name="address" id="Address" required>
+                                        <br>
+                                    </div>
+                                    <div class="Email">
+                                        <Label for="email" id="emaillable" class="required">Email</Label>
+                                        <br>
+                                        <input type="email" name="Email" id="email" required>
+                                        <br>
+                                    </div>
+                                    <br>
+                                </div>
+    
+                                <div class="CityZip">
+                                    <div class="City">
+                                        <Label for="City">City</Label>
+                                        <br>
+                                        <input type="text" name="city" id="City" required>
+                                    </div>
+                                    <div class="Zip">
+                                        <Label for="Zip" class="required">Zip: </Label>
+                                        <br>
+                                        <input type="text" name="zip" id="Zip" maxlength="5" required>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+    
+                            <div id="Payment">
+                                <div>
+                                    <div class="CreditCardFront">
+                                        <img src="./Images/creditCard.png" alt="CardChip">
+                                        <br>
+                                            <Label for="CardNumber" class="required">Card Number: </Label>
+                                            <br>
+                                            <input type="text" name="cardNumber" id="CardNumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+    
+                                            <div class="NameDate">
+                                                <div class="CardHolderName">
+                                                    <Label for="Name">Name: </Label>
+                                                    <br>
+                                                    <input type="text" name="name" id="Name" placeholder="Nigel Jacob" style="width: 150px;" required>
+                                                </div>
+                                                <div class="date">
+                                                    <Label for="ValidTill" class="required">Valid till: </Label>
+                                                    <br>
+                                                    <input type="text" name="validTill" id="ValidTill" placeholder="MM/YY" style="width: 50px; margin-right: 10px;" maxlength="5" required>
+                                                </div>
+                                                <div class="cvv">
+                                                    <Label for="CVV" class="required">CVV:</Label>
+                                                    <br>
+                                                    <input type="text" name="cvv" id="CVV" placeholder="XXX" style="width: 50px;" maxlength="3" required>
+                                                </div>
+                                            </div>
+                                    </div>
+    
+                                    <div class="terms">
+                                        <input type="checkbox" id="terms" required>
+                                    <Label for="Terms">I accept all Terms and Conditions</Label>
+                                    </div>
+                                </div>
+                                    
+                                <div class="buttonSubmitPayment">
+                                    <button id="Submit">
+                                        🔒 Pay Now
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="alertContainer">
+            <div class="alert">
+                <img class="alertError" src="./Images/error.png" alt="error">
+                <div class="message">
+                    <h1 id="heading" >Ooops</h1>
+                    <p id="message">Error Message</p>
+                </div>
+                <div id="alertButtons">
+                    <button class="confrm">Yes</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+                <div id="alertButton">
+                    <button class="okbutton">Cancel</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="PaymentProcessing" id="Progress">
+            <div class="alert">
+                <img class="alertError" id="LoadingBar" src="./Images/loading.gif" alt="error" style="height: 100px; border: none;">
+                <div class="message" style="text-align: center;">
+                    <h1 id="heading" class="HeadingText" >Payment Processing</h1>
+                    <p id="message" class="messagText">Please Wait</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./Checkout.js"></script>
+</body>
+</html>

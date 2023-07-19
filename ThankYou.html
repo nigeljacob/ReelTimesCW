@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Thank You - Reel Times</title>
+</head>
+<body id="ThankYouBody">
+    <script>
+        window.onhashchange = function(event) {
+            event.preventDefault();
+            location.href = "./Products.html";
+        }
+
+        function GotoHome() {
+            location.href = "./Index.html";
+        }
+
+    </script>
+    <header>
+
+    </header>
+
+    <div class="Main">
+        <h1 id="ThankYouText">Thank You for your Order</h1>
+        <p>You will receive you links on your inbox shortly...</p>
+        <small>Having Trouble? <span><a href="mailto:nigeljacob245@gmail.com">Contact Us</a></span></small> 
+        <br>
+        <button onclick="GotoHome()">Continue to Home Page</button>
+    </div>
+</body>
+</html>

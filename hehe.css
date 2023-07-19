@@ -1,0 +1,205 @@
+*{
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+    --main-color: red;
+    --text-color: black;
+    --bg-color: white;
+}
+
+header{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 10px 10px 10px;
+    transition: 0.5s;
+    background-color: var(--text-color);
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+
+.logo .bx{
+    font-size: 2rem;
+    color: var(--main-color);
+}
+#myLinks .nav-menu a {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+
+.bx{
+    color: var(--main-color);
+}
+
+
+.nav-menu{
+    display: flex;
+    column-gap: 5rem;
+    justify-content: space-between;
+}
+
+.nav-menu li{
+    position: relative;
+    margin-left: 1rem;
+    bottom: 70px;
+}
+
+.nav-menu a{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--bg-color);
+}
+.nav-menu a:hover {
+    width: 10%;
+     /* Change the color here */
+}
+
+
+.nav-menu a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    transition: 0.4s all linear;
+}
+
+.nav-menu a:hover::after,
+.nav-menu .active::after{
+    width: 100%;
+
+}
+nav {
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    position: relative; /* Add this */
+    z-index: 999; /* Add this */
+    margin: 0;
+}
+
+label.logo {
+    font-size: 35px;
+    font-weight: bold;
+    color: aliceblue;
+    padding: 0 100px;
+    line-height: 80px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 40px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
+  .mySlides {
+    position: relative;
+    text-align: center;
+}
+
+.numbertext {
+    position: absolute;
+    border-radius: 8px;
+    width: 20%;
+    font-size: 3vw;
+    bottom: 40%;
+    left: 3%;
+    color:white;
+    font-family: 'Gruppo', sans-serif;
+    
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001; /* Increase z-index value */
+   
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: aliceblue;
+}
+ 
+@media screen and (max-width: 1400) {
+    .nav-menu li {
+        margin-left: 20px;
+    }
+}
+@media (max-width: 1068px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active.bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active.bar:nth-child(1) {
+        transform: translate(8px) rotate(45deg);
+    }
+
+    .hamburger.active.bar:nth-child(1) {
+        transform: translate(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+}
+.numbertext a {
+    color: wheat; /* Customize the link color */
+    text-decoration: none; /* Remove the underline */
+    font-weight: bold; /* Apply a bold font weight */
+    transition: color 0.3s ease; /* Add a smooth color transition on hover */
+  }
+  
+  .numbertext a:hover {
+    color: red; /* Change the link color on hover */
+  }
+  

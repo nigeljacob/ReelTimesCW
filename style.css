@@ -139,15 +139,20 @@ iframe{
 }
 
 #productsBody {
-    background: linear-gradient(to right, black, #300000, black);
+    background: #e7e7e7;
     overflow: scroll;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+main{
+  margin-top: 130px;
 }
 
 #topMovies {
-    background: black;
+    background: rgba(0, 0, 0, 0.75);
     border-radius: 20px;
     color: white;
     text-align: center;
@@ -155,12 +160,13 @@ iframe{
     background-size: cover;
     width: 90%;
     margin: auto;
+    background-blend-mode: multiply;
 }
 
 .infoandButtons {
-    font-family: 'Gruppo', sans-serif;
-    padding-top: 24%;
-    padding-bottom: 3%; 
+  font-family: 'Poppins', sans-serif;
+    padding-top: 27%;
+    padding-bottom: 1%; 
     margin-top: 20px;
     padding-left: 10%;
     padding-right: 10%;
@@ -193,7 +199,7 @@ iframe{
     color: white;
 }
 
-.addCart:hover, .buyNow:hover {
+.addCart:hover, .buyNow:hover{
     opacity: 80%;
 }
 
@@ -206,13 +212,13 @@ iframe{
 }
 
 .highlyRecomended {
-    font-family: 'Gruppo', sans-serif;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    color: black;
     margin-top: 40px;
     font-size: 25px;
 }
 
-#HolyWoodMovies {
+#HolyWoodMovies, #Anime, #kdrama, #BollyWoodMovies {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 10px;
@@ -220,19 +226,34 @@ iframe{
     margin-top: 15px;
     text-align: center;
 }
+#movieImageQuickView {
+  width: 520px;
+  height: 420px;
+}
 
-#popupView{
+#VideoTrailer {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: black;
+}
+
+.popupView, .Cart, .alertContainer, .PaymentProcessing{
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 2000;
     justify-content: center;
     align-items: center;
     margin: auto;
     width: 100%;
     text-align: center;
     height: 100%;
+    transition: opacity 0.5s;
+    visibility: hidden;
 }
+
 #view{
     display: flex;
     width: 80%;
@@ -241,18 +262,12 @@ iframe{
     opacity: 90%;
 }
 
-#view img{
-    width: 400px;
-    flex: 2;
-    border-radius: 20px;
-}
-
 #QuickviewInfo{
     text-align: start;
     margin-left: 20px;
     margin-right: 20px;
     color: white;
-    font-family: 'Gruppo', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 #Quickview{
@@ -277,32 +292,42 @@ iframe{
 }
 
 #quickViewname{
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: 10px;
+    font-weight: 400;
+    
 }
 
-#quickViewdesc{
-    font-size: 15px;
+#quickViewdesc {
+    font-size: 12px;
     margin-bottom: 10px;
     font-style: italic;
+    font-weight: 100;
+}
+
+.QuickviewInfo {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 100;
 }
 
 .priceTag {
     background: #480000;
     color: white;
     padding: 10px 20px 10px 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     width: fit-content;
     margin-top: 20px;
 }
 
 #quickViewPrice {
-    font-size: 35px;
-    font-weight: 800;
+    font-size: 26px;
+    font-weight: 600;
 }
 
 button{
-    font-family: 'Gruppo', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
 }
 
 .addCartQuickView {
@@ -321,6 +346,190 @@ button{
 .addCartQuickView:hover {
     opacity: 80%;
 }
+
+.animationout {
+    opacity: 0;
+}
+
+.cartContainer{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    transition: opacity 0.5s;
+    margin: 30px;
+    
+}
+
+.cartImage{
+    background: white;
+    border-radius: 50%;
+    padding: 10px 12px;
+    transform: rotate(0deg);
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cartImage img {
+    width: 30px;
+}
+
+.cartImage:hover {
+    transform: rotate(359deg);
+}
+
+.cartamount {
+    background: #620505;
+    color: white;
+    height: fit-content;
+    padding: 0px 10px 0px 10px;
+    border-radius: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    left: 70%;
+    top: -5px;
+}
+
+.carrtView {
+  font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.removeall {
+    cursor: pointer;
+}
+
+.removeall:hover {
+    text-decoration: underline;
+}
+
+.closeView {
+    background: #620505;
+    color: white;
+    height: fit-content;
+    padding: 3px 7px;
+    border-radius: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    left: 88%;
+    margin-top: -35px;
+    cursor: pointer;
+}
+
+.headingcontaner {
+    display: flex;
+    align-items: center;
+    text-align: start;
+}
+
+.heading {
+    flex: 1;
+}
+
+.removeall {
+    flex: 1;
+    color: red;
+    font-size: 20px;
+    text-align: end;
+}
+
+#cartitems{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    height: 200px;
+    overflow-y: scroll;
+    border-radius: 20px;
+}
+
+.cartInfoButtons {
+    text-align: start;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.totalText {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.cartButtons {
+    margin-top: 20px;
+}
+
+.CheckOut {
+    padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #620505;
+    color: white;
+    font-size: 15px;
+}
+
+.alert {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: fit-content;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.alertError {
+    height: 80px;
+    margin: 20px;
+    border: red 3px solid;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.message h1, p{
+    margin: 10px;
+}
+
+.message p {
+    font-size: 20px;
+}
+
+.confrm, .cancel, .okbutton {
+    padding: 10px;
+    width: 100px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.confrm {
+    background: darkblue;
+}
+
+.cancel, .okbutton {
+    background: red;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
 
 
 @keyframes draw {
@@ -401,12 +610,17 @@ button{
         font-size: 20px;
     }
 
+    #movieImageQuickView {
+      width: 520px;
+      height: 420px;
+    }
+
 
   }
 
   @media screen and (min-width: 1920px) {
 
-    #HolyWoodMovies {
+    #HolyWoodMovies, #Anime {
         grid-template-columns: repeat(4, 1fr);
     }
 
@@ -414,5 +628,475 @@ button{
         background-position: center top;
     }
 
+    #movieImageQuickView {
+      width: 720px;
+      height: 620px;
+    }
+
+    #cartitems {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 15px;
+    text-align: center;
+    }
+  }
+
+  /* CheckoutPage */
+
+  #CheckoutBody {
+    font-family: 'Poppins', sans-serif;
+    background: #e7e7e7;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Wrapper{
+    display: flex;
+  }
+
+  .CartSummary {
+    flex: 1;
+    margin: 20px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+
+  .CartSummary h1{
+    font-weight: 400;
+    font-size: 25px;
+  }
+  .CartSummary #cartTotal {
+    font-weight: 200;
+    font-size: 15px;
+    text-align: right;
+  }
+
+  .CheckOutWrapper {
+    flex: 2;
+    margin: 20px;
+    background: white;
+    border-radius: 20px;
+    padding: 80px;
+  }
+
+  @media  screen and (min-width: 1920px) {
+    .CheckOutWrapper {
+      flex: 3;
+    } 
+  }
+
+  .CheckOut {
+    padding: 20px;
 
   }
+  .DeleteButtonDiv{
+    flex: 1; 
+    text-align: end;
+    margin-right: 5px;
+  }
+
+  .DeleteButton{
+    cursor: pointer; 
+    background: red; 
+    padding: 3px;
+    width: 20px; 
+    border-radius: 5px; 
+    color: white; 
+    border: none; 
+  }
+
+  .DeleteButton:hover {
+    background: white;
+    border: 1px solid red;
+    color: red;
+  }
+
+  .CheckOutHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .CheckOutHeader .yourDetailsHeader,   .CheckOutHeader .PaymentHeader {
+    flex: 1;
+    text-align: center;
+    color: #A7A7A7;
+    transition: opacity 1s;
+  }
+
+  .formWrapper {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .yourDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
+    .name, .CityZip, .AddressLabel  {
+    display: flex;
+  }
+
+  .firstname, .lastname, .City , .Zip, .AddressClass, .Email {
+    flex: 1;
+  }
+
+  .firstname label, .lastname label {
+    font-size: 15px;
+  }
+
+  .AddressLabel {
+    margin-top: 10px;
+  }
+
+  .name input[type=text] , .CityZip input[type=text], .AddressLabel input {
+    width: 300px;
+    padding: 7px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .CreditCardFront {
+    width: 400px;
+    background: linear-gradient(45deg, #480000 60%, #620505 49%, black 99%);
+    color: white;
+    padding: 20px;
+    flex: 1;
+    margin-top: 40px;    
+    border-radius: 20px;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .CreditCardFront img{
+    width: 80px;
+  }
+
+  .CreditCardFront label {
+    font-size: 13px;
+  }
+
+  .CreditCardFront #CardNumber {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid;
+    background: transparent;
+  }
+
+  .CreditCardFront input{
+    font-size: 15px;
+    font-weight: 200;
+    border: 0;
+    color: white;
+    border-bottom: 1px solid;
+    background: transparent;
+    width: 100px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+  }
+
+  ::placeholder {
+    color: #b7b7b7;
+    opacity: 50%;
+  }
+
+  .required:after {
+    content:" *";
+    color: red;
+  }
+
+  .CreditCardFront input:focus ,  .CreditCardFront #CardNumber:focus {
+    outline: none;
+    border-bottom: 2px solid red;
+  }
+
+
+  .NameDate {
+    margin-top: 10px;
+    display: flex;
+  }
+
+  .CardHolderName, .date, .cvv{
+    flex: 1;
+  }
+
+  .buttonSubmitPayment {
+    flex: 1;
+    justify-content: end;
+    display: flex;
+    margin-right: 70px;
+  }
+
+  #Submit {
+    padding: 10px 20px 10px 20px;
+    border: 0;
+    background: #300000;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .terms{
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .terms input[type=checkbox] {
+    width: 50px;
+  }
+
+  /* Thank you Page */
+  
+  #ThankYouBody {
+    font-family: "Poppins", "sans-serif";
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #e7e7e7;
+  }
+
+  #ThankYouBody h1 {
+    font-size: 50px;
+    animation: textAnimation 0.35s ease-in;
+  }
+
+  #ThankYouBody p {
+    font-size: 16px;
+    font-weight: 100;
+    animation: textAnimation 0.5s ease-in;
+  }
+
+  #ThankYouBody small {
+    font-size: 13px;
+    font-weight: 100;
+    margin-top: 20px;
+  }
+
+  #ThankYouBody button {
+    padding: 10px 20px 10px 20px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #300000;
+    color: white;
+    margin-top: 40px;
+  }
+
+  button{
+    transition: all 0.3s ease-in-out;
+  }
+
+  button:hover {
+    opacity: 80%;
+    transform: scale(0.9);
+  }
+
+
+  .Main{
+    position: relative;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  /* Page Editor */
+
+  .PageEditorBody {
+    font-family: 'Barlow Condensed', sans-serif;
+    background: linear-gradient(to right, #8693AB, #BDD4E7);
+    background-size: 400% 400%;
+    animation: BackgroundAnmation 8s ease infinite;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #Heading {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 10px;
+    background: linear-gradient(to right, #414141, #000000);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: BackgroundAnmation 4s ease infinite;
+  }
+
+  .StudentDetails {
+    margin-top: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .details {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  .jumpToBottom {
+    margin-top: 10px;
+  }
+
+ html {
+    scroll-behavior: smooth;
+  }
+
+  .PresentationPage, .ProductsPage, .CheckoutPage, .ContentPage {
+    margin-top: 25px;
+  }
+
+  .PresentationPage p, .ProductsPage p, .CheckoutPage p, .ContentPage p {
+    width: 400px;
+    margin: auto;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+.ContentPage {
+  margin-bottom: 20px;
+}
+
+
+  @keyframes BackgroundAnmation {
+    0%{
+      background-position: 0% 50%;
+    }
+
+    50%{
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+    
+  }
+
+  /* Content Page */
+
+  .contentMain{
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    scroll-snap-align: center;
+    top: 100px;
+  }
+
+  .ContentPageAnchors {
+    background: black;
+    text-decoration: none;
+    list-style: none;
+    padding: 5px 0px 5px 0px;
+    position: fixed;
+    height: 100%;
+  }
+
+  .contentMain .img {
+    width: 400px;
+  }
+
+  .content {
+    flex: 2;
+    padding: 20px;
+    text-align: center;
+    margin-left: 120px;
+  }
+
+  .content p {
+    width: 800px;
+    margin: auto;
+    color: #757575;
+    text-align: justify;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .content h1{
+    font-size: 50px;
+    background: linear-gradient(to right, #414141, #000000, #191654, #480000);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: BackgroundAnmation 9s ease infinite;
+  }
+
+.content .information {
+  margin-top: 50px;
+}
+
+.content .Images {
+  width: 1000px;
+  margin: auto;
+  display: flex;
+  overflow-x: auto;
+}
+
+.content .Images .ImageContainer {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  background: #e7e7e7;
+}
+
+.content .Images .ImageContainer img {
+  width: 300px;
+  border-radius: 17px;
+  height: 180px;
+}
+
+.content .Images .ImageContainer h1 {
+  font-size: 25px;
+}
+
+.content .Images .ImageContainer button {
+  padding: 10px 20px 10px 20px;
+  background: #300000;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.content .Images::-webkit-scrollbar {
+  display: none;
+}
+
+.anchor {
+  padding: 20px 10px 20px 10px;
+  margin: 10px 0px 10px 0px;
+  text-align: center;
+}
+
+.anchor a{
+  color: white;
+  margin: 0px 10px 0px 10px;
+}
+
+.aciveAnchor {
+  background: #300000;
+}
+
+
+

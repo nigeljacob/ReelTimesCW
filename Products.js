@@ -598,7 +598,4 @@ function ShowAlert(heading, message, func, confirmText, type) {
         })
     }
 
-
-
-
 }

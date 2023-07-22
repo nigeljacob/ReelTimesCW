@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-
-}
-
 .no-scroll {
     overflow: hidden;
 }
@@ -33,7 +29,7 @@ body {
     animation: pageFade 2.5s ease-out;
 }
 
-#siteLogo{
+.siteLogo{
     height: 80px;
     width: 80px;
     stroke: white;
@@ -138,13 +134,14 @@ iframe{
     animation: pageFade 3s 4s ease-out;
 }
 
+/* Products page  */
+
 #productsBody {
     background: #e7e7e7;
     overflow: scroll;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
 }
 
 main{
@@ -152,7 +149,7 @@ main{
 }
 
 #topMovies {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.70);
     border-radius: 20px;
     color: white;
     text-align: center;
@@ -578,6 +575,12 @@ button{
     }
   }
 
+  @media screen and (max-width: 1100px) { 
+    #HolyWoodMovies, #Anime, #kdrama, #BollyWoodMovies {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
   @media screen and (max-width: 800px) {
 
     .title h1 {
@@ -615,12 +618,19 @@ button{
       height: 420px;
     }
 
+  #HolyWoodMovies, #Anime, #kdrama, #BollyWoodMovies {
+      grid-template-columns: repeat(1, 1fr);
+  }
 
+  #view {
+    display: flex;
+    flex-direction: column;
+  }
   }
 
   @media screen and (min-width: 1920px) {
 
-    #HolyWoodMovies, #Anime {
+    #HolyWoodMovies, #Anime, #kdrama, #BollyWoodMovies {
         grid-template-columns: repeat(4, 1fr);
     }
 
@@ -642,6 +652,8 @@ button{
     text-align: center;
     }
   }
+
+
 
   /* CheckoutPage */
 
@@ -669,6 +681,12 @@ button{
     font-weight: 400;
     font-size: 25px;
   }
+
+  #CartSummaryItems {
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+
   .CartSummary #cartTotal {
     font-weight: 200;
     font-size: 15px;
@@ -686,7 +704,8 @@ button{
   @media  screen and (min-width: 1920px) {
     .CheckOutWrapper {
       flex: 3;
-    } 
+    }
+    
   }
 
   .CheckOut {
@@ -760,7 +779,7 @@ button{
   }
 
   .name input[type=text] , .CityZip input[type=text], .AddressLabel input {
-    width: 300px;
+    width: 90%;
     padding: 7px;
     border: 1px solid;
     border-radius: 5px;
@@ -852,6 +871,40 @@ button{
   
   .terms input[type=checkbox] {
     width: 50px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .Wrapper{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .CheckOutWrapper {
+      padding: 40px 40px 40px 30px;
+    }
+
+    .buttonSubmitPayment {
+      justify-content: center;
+      margin-right: 0px;
+      margin-top: 20px;
+    }
+
+    #CartSummaryItems {
+      max-height: 300px;
+      overflow-y: scroll;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+  }
+
+  @media screen and (max-width: 700px) {
+    #CartSummaryItems {
+      max-height: 300px;
+      overflow-y: scroll;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   /* Thank you Page */

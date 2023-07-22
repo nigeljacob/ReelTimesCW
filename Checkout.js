@@ -61,7 +61,7 @@ function DisplayCartSummary() {
             `
             CartItems.appendChild(movie);
         });
-        CartAmount.innerHTML = "$" + CartTotal.toString();
+        CartAmount.innerHTML = "$" + CartTotal.toFixed(2).toString();
     }
 }
 
@@ -119,12 +119,14 @@ CardNumberInput.addEventListener("input", function() {
     if (CardNumber.toString().length == 18 && times == 0) {
         CardNumberInput.value = "";
     }
-    if (CardNumber.toString().length == 2) {
+    if (CardNumber.toString().length < 2) {
+        Break = 4;
         times = 1;
     }
 
     if (CardNumber.toString().length == 19) {
-        const result = CardNumber.split(/[, ]+/);
+        // splits each string by space into 4 parts
+        const result = CardNumber.split(" ");
         var temp = "";
         for (let i = 0; i < result.length; i++) {
             temp = temp + result[i];
@@ -163,8 +165,7 @@ CVV.addEventListener("input", function() {
 Form.addEventListener('submit', function(event) {
     var CardNumber = document.forms["MainForm"]["cardNumber"].value;
     var Zip = document.forms["MainForm"]["zip"].value;
-    var CVVLength = document.forms["MainForm"]["cvv"].value;
-    var EmailAd = document.forms["MainForm"]["Email"].value;
+    var CVV = document.forms["MainForm"]["cvv"].value;
 
     if (isNaN(FinalNumber)) {
         event.preventDefault();
@@ -176,11 +177,11 @@ Form.addEventListener('submit', function(event) {
     } else if(Zip.toString().length != 5) {
         event.preventDefault();
         ShowAlert("Invalid Zip Code", "Enter a valid postal code", "", "Ok", "alert");
-    }else if (CVVLength.toString().length < 3 && isNaN(CVVLength)) {
+    } else if (CVV.toString().length != 3 && isNaN(CVV)) {
         event.preventDefault();
         ShowAlert("Invalid CVV Code", "Enter a correct cvv", "", "Ok", "alert");
     } else {
-        event.preventDefault();
+         event.preventDefault();
         ShowProgress();
     }
 })
@@ -263,8 +264,6 @@ function ShowAlert(heading, message, func, confirmText, type) {
 }
 
 function ShowProgress(EmailAddress) {
-    let body = document.getElementById("Wrapper");
-    body.style.filter = "blur(2px)";
     CustomProgress.classList.remove("animationout");
     CustomProgress.style.transition = "0.5s";
     CustomProgress.style.visibility = "visible";
@@ -279,7 +278,6 @@ function ShowProgress(EmailAddress) {
         headingText.innerHTML = "Payment Done";
         Message.innerHTML = "";
         setTimeout(function() {
-            body.style.filter = "blur(0px)";
             sessionStorage.clear();
             location.href = "./ThankYou.html";
         }, 1500)

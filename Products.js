@@ -233,7 +233,7 @@ let Movies = [
         "rating": "87",
         "link" : "./Videos/Glory.mp4",
         "catagory" : "Kdrama",
-        "price" : "5.40"
+        "price" : "5.20"
     }
     // BollyWood
     ,{
@@ -324,8 +324,6 @@ function movieSlide() {
     moviedescr.innerHTML = newMOvieDesc;
     topSection.style.backgroundImage = "url(" + newImage + ")";
     topSection.style.transition = "1000ms";
-
-
 }
 
 function movieProducts() {
@@ -491,7 +489,7 @@ function displayCart() {
         cartLayout.appendChild(element);
     })
 
-    cartAmount.innerHTML = "$" + cartTotal.toString();
+    cartAmount.innerHTML = "$" + cartTotal.toFixed(2).toString();
     cartAmount.style.fontSize = "23px";
     numberOfItems.innerHTML = CartList.length.toString();
 

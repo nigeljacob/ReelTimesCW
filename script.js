@@ -22,7 +22,3 @@ setTimeout(function() {
     frame.hidden = true;
 }, 7000);
 
-button.addEventListener('click', () => {
-    location.reload();
-})
-
